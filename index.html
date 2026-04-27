@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#7b1e1e">
+  <title>Audioguía Ávila GPS</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Audioguía Ávila</h1>
+      <p>Ruta a pie · GPS · 2 horas</p>
+    </div>
+    <button id="installBtn" hidden>Instalar</button>
+  </header>
+
+  <main>
+    <section class="card hero">
+      <h2>Modo audioguía</h2>
+      <p>Activa el GPS. Al acercarte a cada punto, la app reproducirá automáticamente el bloque correspondiente con música ambiental suave.</p>
+      <div class="buttons">
+        <button id="startBtn">Iniciar GPS</button>
+        <button id="stopBtn" class="secondary">Parar</button>
+      </div>
+      <div class="status">
+        <span id="gpsStatus">GPS parado</span>
+        <span id="nearestStatus">Sin ubicación</span>
+      </div>
+    </section>
+
+    <section class="card controls">
+      <label>Radio activación: <strong><span id="radiusValue">60</span> m</strong>
+        <input id="radius" type="range" min="25" max="120" value="60">
+      </label>
+      <label>Volumen música: <strong><span id="musicValue">18</span>%</strong>
+        <input id="musicVol" type="range" min="0" max="40" value="18">
+      </label>
+      <label>Volumen voz: <strong><span id="voiceValue">100</span>%</strong>
+        <input id="voiceVol" type="range" min="40" max="100" value="100">
+      </label>
+      <div class="buttons">
+        <button id="testAmbient" class="secondary">Probar música</button>
+        <button id="stopAudio" class="danger">Silenciar</button>
+        <button id="resetPlayed" class="secondary">Reiniciar puntos</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Ruta a pie</h2>
+      <ol id="waypointList"></ol>
+      <a class="maps" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/Puerta+del+Alc%C3%A1zar,+%C3%81vila/Catedral+de+%C3%81vila/Plaza+del+Mercado+Chico,+%C3%81vila/Bas%C3%ADlica+de+San+Vicente,+%C3%81vila/Convento+de+Santa+Teresa,+%C3%81vila/Mirador+de+los+Cuatro+Postes,+%C3%81vila">
+        Abrir ruta en Google Maps
+      </a>
+    </section>
+
+    <section class="card">
+      <h2>Reproducción manual</h2>
+      <div id="manualButtons" class="manual"></div>
+    </section>
+
+    <section class="card food">
+      <h2>Comer bien por menos de 25 €</h2>
+      <p><strong>Los Candiles</strong>: raciones y cocina castellana con buena relación calidad/precio.</p>
+      <p><strong>Soul Kitchen</strong>: opción más moderna, hamburguesas y platos creativos.</p>
+      <p><strong>Bococo</strong>: buena cocina local; revisa menú/precio del día antes de entrar.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Consejo: abre la app antes de salir, pulsa “Iniciar GPS” y mantén la pantalla desbloqueada si Android limita el navegador en segundo plano.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
